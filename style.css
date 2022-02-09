@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Outfit&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Outfit&family=Roboto:wght@100&display=swap');
+
+
+
+* {
+	margin: ;
+	padding: ;
+}
+
+
+.contenedor {
+	height: 50vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 4fr 150px;
+	grid-template-areas:"cabecera cabecera cabecera"
+						"navegacion navegacion navegacion"
+						"contenido contenido lateral"
+						"pie pie pie";
+}
+
+:root {
+	--fuente-titulo: 'Oswald', sans-serif;
+	--fuente-titulo-anuncio: 'Oswald', sans-serif;
+
+	--fuete-texto: 'Oswald', sans-serif;
+	--color-negro: #222;
+	--tamaño-texto: 2em;
+	--boton-color: #800;
+	--boton-hover: #f44;
+	--boton-activo: #c00;
+}
+
+
+/* -------------------------ESTILOS CABECERA------------------- */
+.cabecera {
+	grid-area: cabecera;
+	display: flex;
+	align-items: center;
+	font-size: var(--tamaño-texto);
+	font-family: var(--fuente-titulo);
+	flex-wrap: wrap;
+
+}
+
+.cabecera__imagen {
+	height: 200px;
+	width: 150px;
+}
+
+
+.cabecera__imagen img {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	transition: 0.3s all;
+}
+
+.cabecera__imagen img:hover {
+	transform: rotate(10deg);
+}
+
+/*-------------Estilos De la NAVEGACION-------------------*/
+
+.navegacion {
+	padding: 20px 0;
+	grid-area: navegacion;
+
+}
+
+.navegacion__ul {
+	list-style: none;
+	position: sticky;
+	top: 0;
+	background-color: #fff;
+}
+
+.navegacion__ul li {
+	display: inline-block;
+	margin: 0 10px;
+	transition: 1s all;
+}
+
+
+.navegacion__ul li:hover {
+	text-decoration: underline dashed;
+}
+
+.navegacion__ul li a {
+	color: var(--color-negro);
+	font-family: var(--fuente-titulo);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 2em;
+}
+
+
+
+
+/*----------------Estilos del Contenido-------------------*/
+
+.contenido {
+	grid-area: contenido;
+}
+
+.lista-peliculas {
+	display: flex;
+	padding: 5px;
+	justify-content: start;
+	flex-wrap: wrap;
+	column-gap: 30px;
+	row-gap: 50px;
+}
+
+.pelicula {
+	padding: 5px;
+	height: 100%;
+	transition: .5s all;
+
+
+}
+
+.pelicula:hover {
+	transform: scale(1.1);
+}
+
+.pelicula__imagen {
+	height: 250px;
+}
+
+.pelicula__imagen img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 2px;
+}
+
+.pelicula__titulo  {
+	text-align: center;
+	font-size: 1.5em;
+	font-family: var(--fuente-titulo);
+}
+
+.pelicula__boton {
+	text-align: center;
+	display: block;
+}
+
+/* BOTONES DE COMPRA */
+
+.pelicula__boton button {
+	background-color: #800;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 25px;
+	font-size: 1.3em;
+	transition: .3s all;
+}
+
+
+
+.pelicula__boton button:hover {
+	background-color: var(--boton-hover);
+}
+
+
+
+
+/*----------------Estilos del Contenido-------------------*/
+.barra_lateral {
+	grid-area: lateral;
+	font-family: var(--fuente-titulo-anuncio);
+	text-align: center;
+}
+
+.caja-imagen {
+	border: 3px solid #0003;
+}
+
+.caja-imagen img {
+	max-width: 50%;
+	height: auto;
+	object-fit: contain;
+
+}
+
+
+/*----------------Estilos de pie de pagina-------------------------*/
+
+.pie {
+	grid-area: pie;
+	background-color: var(--color-negro);
+}
+
+@media only screen and (max-width: 940px) {
+	.contenedor {
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 4fr 1fr 150px;
+	grid-template-areas:"cabecera"
+						"navegacion"
+						"contenido"
+						"lateral"
+						"pie";
+}
+
+	.navegacion{
+		text-align: center;
+	}
+
+	.lista-peliculas {
+		justify-content: center;
+	}
+
+}
